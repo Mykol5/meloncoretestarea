@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Invitation - Melon Solutions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .email-wrapper {
+      background-color: #f9fafb;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+    
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .header {
+      background-color: #ffffff;
+      padding: 32px 40px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1f2937;
+      margin: 0;
+      letter-spacing: -0.5px;
+    }
+    
+    .logo-accent {
+      color: #5B94E5;
+    }
+    
+    .content {
+      padding: 48px 40px;
+    }
+    
+    .invitation-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1f2937;
+      margin: 0 0 8px 0;
+      text-align: center;
+    }
+    
+    .invitation-subtitle {
+      font-size: 15px;
+      color: #6b7280;
+      margin: 0 0 32px 0;
+      text-align: center;
+    }
+    
+    .organization-card {
+      background-color: #ebf4ff;
+      border: 1px solid #bfdbfe;
+      border-left: 3px solid #5B94E5;
+      border-radius: 6px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+    
+    .organization-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1f2937;
+      margin: 0 0 8px 0;
+    }
+    
+    .inviter-info {
+      font-size: 14px;
+      color: #6b7280;
+      margin: 0;
+    }
+    
+    .inviter-name {
+      color: #5B94E5;
+      font-weight: 600;
+    }
+    
+    .message {
+      font-size: 15px;
+      color: #4b5563;
+      margin: 32px 0;
+      line-height: 1.6;
+      text-align: center;
+    }
+    
+    .cta-section {
+      margin: 32px 0;
+      text-align: center;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background-color: #5B94E5;
+      color: #ffffff;
+      padding: 14px 32px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background-color 0.2s ease;
+    }
+    
+    .cta-button:hover {
+      background-color: #4A7EC9;
+    }
+    
+    .benefits-section {
+      background-color: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+    
+    .benefits-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1f2937;
+      margin: 0 0 16px 0;
+    }
+    
+    .benefits-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .benefits-list li {
+      font-size: 14px;
+      color: #4b5563;
+      padding: 8px 0;
+      line-height: 1.5;
+      position: relative;
+      padding-left: 24px;
+    }
+    
+    .benefits-list li:before {
+      content: "•";
+      position: absolute;
+      left: 8px;
+      color: #5B94E5;
+      font-weight: 600;
+    }
+    
+    .alternative-section {
+      margin: 32px 0;
+      padding: 20px;
+      background-color: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+    }
+    
+    .alternative-label {
+      font-size: 13px;
+      color: #6b7280;
+      margin: 0 0 8px 0;
+      font-weight: 500;
+    }
+    
+    .link-text {
+      font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+      font-size: 13px;
+      color: #5B94E5;
+      word-break: break-all;
+      padding: 12px;
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px;
+      margin: 0;
+    }
+    
+    .expiry-note {
+      margin: 32px 0 0 0;
+      padding: 16px 20px;
+      background-color: #fffbeb;
+      border-left: 3px solid #f59e0b;
+      border-radius: 4px;
+    }
+    
+    .expiry-note p {
+      font-size: 14px;
+      color: #92400e;
+      margin: 0;
+      line-height: 1.5;
+    }
+    
+    .footer {
+      background-color: #f9fafb;
+      padding: 32px 40px;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+    }
+    
+    .footer-content {
+      font-size: 13px;
+      color: #6b7280;
+      margin: 0 0 16px 0;
+      line-height: 1.5;
+    }
+    
+    .footer-links {
+      margin: 16px 0;
+    }
+    
+    .footer-link {
+      color: #5B94E5;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      margin: 0 12px;
+    }
+    
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+    
+    .footer-bottom {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    @media (max-width: 600px) {
+      .email-wrapper {
+        padding: 20px 10px;
+      }
+      
+      .header,
+      .content,
+      .footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      
+      .alternative-section,
+      .benefits-section,
+      .organization-card {
+        padding: 16px;
+      }
+      
+      .footer-link {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-wrapper">
+    <div class="email-container">
+      
+      <!-- Header -->
+      <div class="header">
+        <h1 class="logo">
+          <span class="logo-accent">Melon Solutions</span>
+        </h1>
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+        <h1 class="invitation-title">You're Invited to Join</h1>
+        <p class="invitation-subtitle">Start collaborating on impact measurement</p>
+
+        <!-- Organization Card -->
+        <div class="organization-card">
+          <h2 class="organization-name">{{organizationName}}</h2>
+          <p class="inviter-info">
+            <span class="inviter-name">{{inviterName}}</span> has invited you to join the team
+          </p>
+        </div>
+
+        <p class="message">
+          Your team is using Melon Solutions to measure and track impact data. Accept this invitation to collaborate on projects and help drive positive change.
+        </p>
+
+        <div class="cta-section">
+          <a href="{{invitationUrl}}" class="cta-button">
+            Accept Invitation
+          </a>
+        </div>
+
+        <!-- Benefits Section -->
+        <div class="benefits-section">
+          <h3 class="benefits-title">Join your team to:</h3>
+          <ul class="benefits-list">
+            <li>Track impact metrics together in real-time</li>
+            <li>Create and share collaborative reports</li>
+            <li>Analyze data and share insights with your team</li>
+            <li>Contribute to meaningful impact measurement</li>
+          </ul>
+        </div>
+
+        <!-- Alternative Link -->
+        <div class="alternative-section">
+          <p class="alternative-label">If the button above doesn't work, copy and paste this link into your browser:</p>
+          <p class="link-text">{{invitationUrl}}</p>
+        </div>
+
+        <!-- Expiry Note -->
+        <div class="expiry-note">
+          <p>
+            This invitation expires in 7 days. Accept now to join your team and start collaborating.
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="footer-content">
+          <p>This email was sent by {{companyName}}.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="{{marketingUrl}}" class="footer-link">Visit Website</a>
+          <a href="mailto:{{supportEmail}}" class="footer-link">Contact Support</a>
+          <a href="{{marketingUrl}}/privacy" class="footer-link">Privacy Policy</a>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; {{year}} {{companyName}}. All rights reserved.</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,364 @@
+export enum UserStatus {
+  ACTIVE = 'ACTIVE',
+  INACTIVE = 'INACTIVE',
+  PENDING = 'PENDING',
+  INVITED = 'INVITED',
+  SUSPENDED = 'SUSPENDED',
+  DELETED = 'DELETED',
+}
+
+export enum UserRole {
+  OWNER = 'OWNER', // Organization owner (billing, full admin)
+  ADMIN = 'ADMIN', // Can invite users, manage settings
+  MEMBER = 'MEMBER', // Regular user
+}
+
+export enum PlanType {
+  TRIAL = 'TRIAL',
+  STARTER = 'STARTER',
+  REGULAR = 'REGULAR',
+  PREMIUM = 'PREMIUM',
+}
+
+export enum OrganizationStatus {
+  ACTIVE = 'ACTIVE',
+  TRIAL = 'TRIAL',
+  SUSPENDED = 'SUSPENDED',
+  EXPIRED = 'EXPIRED',
+}
+
+export enum TrackingStatus {
+  FAIL = 'FAIL',
+  ON_TRACK = 'ON_TRACK',
+  ACHIEVED = 'ACHIEVED',
+}
+
+export enum MetricType {
+  PERCENTAGE = 'PERCENTAGE',
+  NUMBER = 'NUMBER',
+  CURRENCY = 'CURRENCY',
+  RATIO = 'RATIO',
+}
+
+export enum ReportStatus {
+  DRAFT = 'DRAFT',
+  PUBLISHED = 'PUBLISHED',
+  CLOSED = 'CLOSED',
+  ARCHIVED = 'ARCHIVED',
+}
+
+export enum ReportCategory {
+  IMPACT_ASSESSMENT = 'IMPACT_ASSESSMENT',
+  FEEDBACK = 'FEEDBACK',
+  HEALTH = 'HEALTH',
+  EDUCATION = 'EDUCATION',
+  AGRICULTURE = 'AGRICULTURE',
+  COMMUNITY = 'COMMUNITY',
+  ENVIRONMENT = 'ENVIRONMENT',
+  ECONOMIC = 'ECONOMIC',
+}
+
+export enum QuestionType {
+  MULTIPLE_CHOICE = 'MULTIPLE_CHOICE',
+  CHECKBOXES = 'CHECKBOXES',
+  DROPDOWN = 'DROPDOWN',
+  SHORT_ANSWER = 'SHORT_ANSWER',
+  PARAGRAPH = 'PARAGRAPH',
+  LINEAR_SCALE = 'LINEAR_SCALE',
+  DATE = 'DATE',
+  TIME = 'TIME',
+  EMAIL = 'EMAIL',
+  PHONE = 'PHONE',
+  NUMBER = 'NUMBER',
+  IMPACT_METRIC = 'IMPACT_METRIC',
+}
+
+export enum ProjectStatus {
+  DRAFT = 'DRAFT',
+  ACTIVE = 'ACTIVE',
+  COMPLETED = 'COMPLETED',
+  ON_HOLD = 'ON_HOLD',
+  CANCELLED = 'CANCELLED',
+}
+
+export enum ProjectSector {
+  HEALTH = 'HEALTH',
+  EDUCATION = 'EDUCATION',
+  ENERGY = 'ENERGY',
+  AGRICULTURE = 'AGRICULTURE',
+  FINANCE = 'FINANCE',
+  ENVIRONMENT = 'ENVIRONMENT',
+  TECHNOLOGY = 'TECHNOLOGY',
+  INFRASTRUCTURE = 'INFRASTRUCTURE',
+  SOCIAL_SERVICES = 'SOCIAL_SERVICES',
+  ECONOMIC_DEVELOPMENT = 'ECONOMIC_DEVELOPMENT',
+}
+
+export enum ProjectRegion {
+  NORTHERN_REGION = 'NORTHERN_REGION',
+  SOUTHERN_REGION = 'SOUTHERN_REGION',
+  EASTERN_REGION = 'EASTERN_REGION',
+  WESTERN_REGION = 'WESTERN_REGION',
+  CENTRAL_REGION = 'CENTRAL_REGION',
+  NORTH_EAST = 'NORTH_EAST',
+  NORTH_WEST = 'NORTH_WEST',
+  SOUTH_EAST = 'SOUTH_EAST',
+  SOUTH_WEST = 'SOUTH_WEST',
+}
+
+export enum FundingSource {
+  GOVERNMENT = 'GOVERNMENT',
+  PRIVATE_FOUNDATION = 'PRIVATE_FOUNDATION',
+  INTERNATIONAL_DONOR = 'INTERNATIONAL_DONOR',
+  CORPORATE_SPONSOR = 'CORPORATE_SPONSOR',
+  CROWDFUNDING = 'CROWDFUNDING',
+  BANK_LOAN = 'BANK_LOAN',
+  VENTURE_CAPITAL = 'VENTURE_CAPITAL',
+  GRANT = 'GRANT',
+  INTERNAL_FUNDING = 'INTERNAL_FUNDING',
+  MIXED_FUNDING = 'MIXED_FUNDING',
+}
+
+export enum ProjectPriority {
+  LOW = 'LOW',
+  MEDIUM = 'MEDIUM',
+  HIGH = 'HIGH',
+  CRITICAL = 'CRITICAL',
+}
+
+export enum TeamRole {
+  PROJECT_LEAD = 'PROJECT_LEAD',
+  FIELD_COORDINATOR = 'FIELD_COORDINATOR',
+  TECHNICAL_ADVISOR = 'TECHNICAL_ADVISOR',
+  FINANCE_MANAGER = 'FINANCE_MANAGER',
+  COMMUNITY_LIAISON = 'COMMUNITY_LIAISON',
+  MONITORING_EVALUATION = 'MONITORING_EVALUATION',
+  ADMIN_SUPPORT = 'ADMIN_SUPPORT',
+}
+
+export enum KYCStatus {
+  PENDING = 'PENDING',
+  ASSIGNED = 'ASSIGNED',
+  IN_REVIEW = 'IN_REVIEW',
+  VERIFICATION_SUBMITTED = 'VERIFICATION_SUBMITTED',
+  VERIFIED = 'VERIFIED',
+  REJECTED = 'REJECTED',
+}
+
+export enum DocumentType {
+  ID_CARD = 'ID_CARD',
+  PROOF_OF_ADDRESS = 'PROOF_OF_ADDRESS',
+  PASSPORT_PHOTO = 'PASSPORT_PHOTO',
+  UTILITY_BILL = 'UTILITY_BILL',
+}
+
+export enum DataSourceType {
+  CSV_IMPORT = 'CSV_IMPORT',
+  REPORT_RESPONSE = 'REPORT_RESPONSE',
+  PROJECT_DATA = 'PROJECT_DATA',
+  EXTERNAL_API = 'EXTERNAL_API',
+  MANUAL_ENTRY = 'MANUAL_ENTRY',
+  EXCEL_IMPORT = 'EXCEL_IMPORT',
+  JSON_IMPORT = 'JSON_IMPORT',
+}
+
+export enum DatasetStatus {
+  PROCESSING = 'PROCESSING',
+  READY = 'READY',
+  ERROR = 'ERROR',
+  ARCHIVED = 'ARCHIVED',
+}
+
+export enum DataSourceStatus {
+  PROCESSING = 'PROCESSING',
+  READY = 'READY',
+  ERROR = 'ERROR',
+}
+
+export enum LayerType {
+  POINTS = 'POINTS',
+  HEATMAP = 'HEATMAP',
+  CHOROPLETH = 'CHOROPLETH',
+  CLUSTERS = 'CLUSTERS',
+  POLYGONS = 'POLYGONS',
+}
+
+export enum AnalysisType {
+  CLUSTER = 'CLUSTER',
+  DENSITY = 'DENSITY',
+  PROXIMITY = 'PROXIMITY',
+  COVERAGE = 'COVERAGE',
+  REGIONAL = 'REGIONAL',
+}
+
+export enum AggregationType {
+  SUM = 'SUM',
+  AVERAGE = 'AVERAGE',
+  COUNT = 'COUNT',
+  MIN = 'MIN',
+  MAX = 'MAX',
+  MEDIAN = 'MEDIAN',
+  MODE = 'MODE',
+}
+
+export enum GeospatialSector {
+  HEALTH = 'HEALTH',
+  EDUCATION = 'EDUCATION',
+  AGRICULTURE = 'AGRICULTURE',
+  ENERGY = 'ENERGY',
+  FINANCE = 'FINANCE',
+  INFRASTRUCTURE = 'INFRASTRUCTURE',
+  ENVIRONMENT = 'ENVIRONMENT',
+  WATER = 'WATER',
+  SANITATION = 'SANITATION',
+  OTHER = 'OTHER',
+}
+
+export enum ChartType {
+  BAR = 'BAR',
+  LINE = 'LINE',
+  PIE = 'PIE',
+  DOUGHNUT = 'DOUGHNUT',
+  AREA = 'AREA',
+  SCATTER = 'SCATTER',
+  HISTOGRAM = 'HISTOGRAM',
+  BOX_PLOT = 'BOX_PLOT',
+}
+
+export enum ColumnDataType {
+  STRING = 'STRING',
+  NUMBER = 'NUMBER',
+  DATE = 'DATE',
+  BOOLEAN = 'BOOLEAN',
+  CURRENCY = 'CURRENCY',
+  PERCENTAGE = 'PERCENTAGE',
+}
+
+export enum ChartStatus {
+  DRAFT = 'DRAFT',
+  SAVED = 'SAVED',
+  SHARED = 'SHARED',
+  PUBLISHED = 'PUBLISHED',
+}
+
+export const COORDINATE_VALIDATION = {
+  LAT_MIN: -90,
+  LAT_MAX: 90,
+  LNG_MIN: -180,
+  LNG_MAX: 180,
+} as const;
+
+export const FILE_LIMITS = {
+  MAX_FILE_SIZE: 10 * 1024 * 1024, // 10MB
+  MAX_EXCEL_SIZE: 25 * 1024 * 1024, // 25MB for Excel files
+  ALLOWED_TYPES: [
+    'text/csv',
+    'application/csv',
+    'application/vnd.ms-excel',
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+  ],
+  MAX_ROWS: 50000,
+  MAX_COLUMNS: 100,
+} as const;
+
+export const USER_LIMITS = {
+  MAX_USERNAME_LENGTH: 50,
+  MIN_PASSWORD_LENGTH: 8,
+  MAX_ORGANIZATION_NAME_LENGTH: 100,
+  MAX_REPORT_TITLE_LENGTH: 200,
+} as const;
+
+export const DEFAULT_STYLING = {
+  COLOR: '#5B94E5',
+  OPACITY: 0.8,
+  RADIUS: 10,
+  CLUSTER_RADIUS: 50,
+} as const;
+
+export const DEFAULT_CHART_COLORS = [
+  '#4F46E5', // Indigo
+  '#10B981', // Emerald
+  '#F59E0B', // Amber
+  '#EF4444', // Red
+  '#8B5CF6', // Violet
+  '#06B6D4', // Cyan
+  '#F97316', // Orange
+  '#EC4899', // Pink
+] as const;
+
+export const THEME_COLORS = {
+  PRIMARY: '#4F46E5',
+  SUCCESS: '#10B981',
+  WARNING: '#F59E0B',
+  ERROR: '#EF4444',
+  INFO: '#06B6D4',
+} as const;
+
+export const SAMPLE_CSV_HEADERS = [
+  'id',
+  'title',
+  'description',
+  'lat',
+  'lng',
+  'sector',
+  'status',
+  'beneficiaries',
+  'impact_score',
+  'region',
+  'coverage_km',
+  'active_agents',
+  'budget',
+  'start_date',
+  'end_date',
+] as const;
+
+export const NIGERIA_BOUNDS = {
+  NORTH: 13.9,
+  SOUTH: 4.3,
+  EAST: 14.7,
+  WEST: 2.7,
+  CENTER: {
+    LAT: 9.082,
+    LNG: 8.6753,
+  },
+} as const;
+
+export const PLAN_FEATURES = {
+  TRIAL: {
+    MAX_USERS: 2,
+    MAX_PROJECTS: 5,
+    MAX_METRICS: 10,
+    MAX_RESPONSES: 100,
+    TRIAL_DAYS: 14,
+  },
+  STARTER: {
+    MAX_USERS: 1,
+    MAX_PROJECTS: 10,
+    MAX_METRICS: 25,
+    MAX_RESPONSES: 500,
+  },
+  REGULAR: {
+    MAX_USERS: 5,
+    MAX_PROJECTS: -1,
+    MAX_METRICS: -1,
+    MAX_RESPONSES: 2500,
+  },
+  PREMIUM: {
+    MAX_USERS: -1,
+    MAX_PROJECTS: -1,
+    MAX_METRICS: -1,
+    MAX_RESPONSES: -1,
+  },
+} as const;
+
+export const EMAIL_TEMPLATE_TYPES = {
+  VERIFICATION: 'VERIFICATION',
+  INVITATION: 'INVITATION',
+  UPGRADE_NOTIFICATION: 'UPGRADE_NOTIFICATION',
+  WELCOME: 'WELCOME',
+  PASSWORD_RESET: 'PASSWORD_RESET',
+} as const;
+
+export const MAX_FILE_SIZE = FILE_LIMITS.MAX_FILE_SIZE;
+export const ALLOWED_FILE_TYPES = ['text/csv', 'application/csv'];
+export const MAX_PREVIEW_ROWS = 100;

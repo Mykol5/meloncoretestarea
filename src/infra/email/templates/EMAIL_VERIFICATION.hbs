@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Your Email - Melon Solutions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .email-wrapper {
+      background-color: #f9fafb;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+    
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+    
+    /* Header */
+    .header {
+      background-color: #ffffff;
+      padding: 32px 40px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1f2937;
+      margin: 0;
+      letter-spacing: -0.5px;
+    }
+    
+    .logo-accent {
+      color: #5B94E5;
+    }
+    
+    /* Content */
+    .content {
+      padding: 48px 40px;
+    }
+    
+    .greeting {
+      font-size: 16px;
+      color: #1f2937;
+      margin: 0 0 24px 0;
+      font-weight: 500;
+    }
+    
+    .message {
+      font-size: 15px;
+      color: #4b5563;
+      margin: 0 0 32px 0;
+      line-height: 1.6;
+    }
+    
+    /* CTA Button */
+    .cta-section {
+      margin: 40px 0;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background-color: #5B94E5;
+      color: #ffffff;
+      padding: 14px 32px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background-color 0.2s ease;
+    }
+    
+    .cta-button:hover {
+      background-color: #4A7EC9;
+    }
+    
+    /* Alternative Link */
+    .alternative-section {
+      margin: 32px 0;
+      padding: 20px;
+      background-color: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+    }
+    
+    .alternative-label {
+      font-size: 13px;
+      color: #6b7280;
+      margin: 0 0 8px 0;
+      font-weight: 500;
+    }
+    
+    .link-text {
+      font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+      font-size: 13px;
+      color: #5B94E5;
+      word-break: break-all;
+      padding: 12px;
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px;
+      margin: 0;
+    }
+    
+    /* Security Note */
+    .security-note {
+      margin: 32px 0 0 0;
+      padding: 16px 20px;
+      background-color: #fffbeb;
+      border-left: 3px solid #f59e0b;
+      border-radius: 4px;
+    }
+    
+    .security-note p {
+      font-size: 14px;
+      color: #92400e;
+      margin: 0;
+      line-height: 1.5;
+    }
+    
+    /* Footer */
+    .footer {
+      background-color: #f9fafb;
+      padding: 32px 40px;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+    }
+    
+    .footer-content {
+      font-size: 13px;
+      color: #6b7280;
+      margin: 0 0 16px 0;
+      line-height: 1.5;
+    }
+    
+    .footer-links {
+      margin: 16px 0;
+    }
+    
+    .footer-link {
+      color: #5B94E5;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      margin: 0 12px;
+    }
+    
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+    
+    .footer-bottom {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    /* Responsive */
+    @media (max-width: 600px) {
+      .email-wrapper {
+        padding: 20px 10px;
+      }
+      
+      .header,
+      .content,
+      .footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      
+      .alternative-section {
+        padding: 16px;
+      }
+      
+      .footer-link {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-wrapper">
+    <div class="email-container">
+      
+      <!-- Header -->
+      <div class="header">
+        <h1 class="logo">
+          <span class="logo-accent">Melon Solutions</span>
+        </h1>
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+        <p class="greeting">Hello {{firstName}},</p>
+        
+        <p class="message">
+          Thank you for creating a Melon Solutions account. To complete your registration and access your dashboard, please verify your email address.
+        </p>
+        
+        <div class="cta-section">
+          <a href="{{verificationUrl}}" class="cta-button">
+            Verify Email Address
+          </a>
+        </div>
+        
+        <p class="message">
+          Once verified, you'll have full access to Melon Solutions and can begin measuring and tracking impact data for your organization.
+        </p>
+        
+        <!-- Alternative Link -->
+        <div class="alternative-section">
+          <p class="alternative-label">If the button above doesn't work, copy and paste this link into your browser:</p>
+          <p class="link-text">{{verificationUrl}}</p>
+        </div>
+        
+        <!-- Security Note -->
+        <div class="security-note">
+          <p>This verification link expires in 24 hours. If you didn't create this account, please disregard this email.</p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="footer-content">
+          <p>This email was sent by {{companyName}}.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="{{marketingUrl}}" class="footer-link">Visit Website</a>
+          <a href="mailto:{{supportEmail}}" class="footer-link">Contact Support</a>
+          <a href="{{marketingUrl}}/privacy" class="footer-link">Privacy Policy</a>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; {{year}} {{companyName}}. All rights reserved.</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>

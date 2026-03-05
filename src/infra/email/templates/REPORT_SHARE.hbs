@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{reportTitle}} - Shared via Melon</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .email-wrapper {
+      background-color: #f9fafb;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+    
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .header {
+      background-color: #ffffff;
+      padding: 32px 40px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1f2937;
+      margin: 0;
+      letter-spacing: -0.5px;
+    }
+    
+    .logo-accent {
+      color: #5B94E5;
+    }
+    
+    .content {
+      padding: 48px 40px;
+    }
+    
+    .greeting {
+      font-size: 16px;
+      color: #1f2937;
+      margin: 0 0 24px 0;
+      font-weight: 500;
+    }
+    
+    .sender-name {
+      color: #5B94E5;
+      font-weight: 600;
+    }
+    
+    .message {
+      font-size: 15px;
+      color: #4b5563;
+      margin: 0 0 32px 0;
+      line-height: 1.6;
+    }
+    
+    .personal-message {
+      background-color: #f9fafb;
+      border-left: 3px solid #5B94E5;
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin: 24px 0 32px 0;
+    }
+    
+    .personal-message p {
+      font-size: 15px;
+      color: #374151;
+      margin: 0 0 12px 0;
+      line-height: 1.6;
+    }
+    
+    .personal-message .message-author {
+      font-size: 14px;
+      color: #6b7280;
+      font-weight: 500;
+      text-align: right;
+      margin: 0;
+    }
+    
+    .report-card {
+      background-color: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+    
+    .report-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1f2937;
+      margin: 0 0 8px 0;
+    }
+    
+    .report-description {
+      font-size: 14px;
+      color: #6b7280;
+      margin: 0 0 16px 0;
+      line-height: 1.5;
+    }
+    
+    .report-meta {
+      display: flex;
+      gap: 16px;
+      margin: 16px 0 24px 0;
+      font-size: 13px;
+      color: #6b7280;
+    }
+    
+    .meta-item {
+      font-weight: 500;
+    }
+    
+    .cta-section {
+      margin: 32px 0;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background-color: #5B94E5;
+      color: #ffffff;
+      padding: 14px 32px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background-color 0.2s ease;
+    }
+    
+    .cta-button:hover {
+      background-color: #4A7EC9;
+    }
+    
+    .security-note {
+      margin: 32px 0 0 0;
+      padding: 16px 20px;
+      border-left: 3px solid #3b82f6;
+      border-radius: 4px;
+      background-color: #eff6ff;
+    }
+    
+    .security-note.private {
+      background-color: #fffbeb;
+      border-left-color: #f59e0b;
+    }
+    
+    .security-note p {
+      font-size: 14px;
+      color: #1e40af;
+      margin: 0;
+      line-height: 1.5;
+    }
+    
+    .security-note.private p {
+      color: #92400e;
+    }
+    
+    .alternative-section {
+      margin: 32px 0;
+      padding: 20px;
+      background-color: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+    }
+    
+    .alternative-label {
+      font-size: 13px;
+      color: #6b7280;
+      margin: 0 0 8px 0;
+      font-weight: 500;
+    }
+    
+    .link-text {
+      font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+      font-size: 13px;
+      color: #5B94E5;
+      word-break: break-all;
+      padding: 12px;
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px;
+      margin: 0;
+    }
+    
+    .footer {
+      background-color: #f9fafb;
+      padding: 32px 40px;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+    }
+    
+    .footer-content {
+      font-size: 13px;
+      color: #6b7280;
+      margin: 0 0 16px 0;
+      line-height: 1.5;
+    }
+    
+    .footer-links {
+      margin: 16px 0;
+    }
+    
+    .footer-link {
+      color: #5B94E5;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      margin: 0 12px;
+    }
+    
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+    
+    .footer-bottom {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    @media (max-width: 600px) {
+      .email-wrapper {
+        padding: 20px 10px;
+      }
+      
+      .header,
+      .content,
+      .footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      
+      .alternative-section {
+        padding: 16px;
+      }
+      
+      .report-meta {
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .footer-link {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-wrapper">
+    <div class="email-container">
+      
+      <!-- Header -->
+      <div class="header">
+        <h1 class="logo">
+          <span class="logo-accent">Melon Solutions</span>
+        </h1>
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+        <p class="greeting">
+          <span class="sender-name">{{senderName}}</span> has shared a report with you.
+        </p>
+        
+        {{#if personalMessage}}
+        <!-- Personal Message -->
+        <div class="personal-message">
+          <p>{{personalMessage}}</p>
+          <p class="message-author">— {{senderName}}</p>
+        </div>
+        {{else}}
+        <!-- Default Message -->
+        <p class="message">
+          You've been invited to review and complete an impact assessment report. Your input helps measure meaningful outcomes and drive positive change.
+        </p>
+        {{/if}}
+
+        <!-- Report Card -->
+        <div class="report-card">
+          <h2 class="report-title">{{reportTitle}}</h2>
+          {{#if reportDescription}}
+          <p class="report-description">{{reportDescription}}</p>
+          {{/if}}
+
+          <div class="report-meta">
+            <span class="meta-item">{{questionCount}} questions</span>
+            <span class="meta-item">~{{estimatedTime}} minutes</span>
+          </div>
+
+          <div class="cta-section">
+            <a href="{{reportUrl}}" class="cta-button">
+              View Report
+            </a>
+          </div>
+        </div>
+
+        <!-- Security Note -->
+        <div class="security-note {{#unless isPublic}}private{{/unless}}">
+          <p>
+            {{#if isPublic}}
+            This is a public report, accessible to all participants.
+            {{else}}
+            This is a private report. Only invited participants can access it.
+            {{/if}}
+          </p>
+        </div>
+
+        <!-- Alternative Link -->
+        <div class="alternative-section">
+          <p class="alternative-label">If the button above doesn't work, copy and paste this link into your browser:</p>
+          <p class="link-text">{{reportUrl}}</p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="footer-content">
+          <p>This email was sent by {{companyName}}.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="{{marketingUrl}}" class="footer-link">Visit Website</a>
+          <a href="mailto:{{supportEmail}}" class="footer-link">Contact Support</a>
+          <a href="{{marketingUrl}}/privacy" class="footer-link">Privacy Policy</a>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; {{year}} {{companyName}}. All rights reserved.</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>
