@@ -190,7 +190,7 @@ export class KYCController {
   @UseInterceptors(FileInterceptor('file'))
   async uploadDocument(
     @Param('id') id: string,
-    @UploadedFile() file: Express.Multer.File,
+    @UploadedFile() file: MulterFile,
     @Body('documentType') documentType: string,
     @Request() req,
   ) {
