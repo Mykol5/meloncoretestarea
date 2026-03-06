@@ -23,6 +23,7 @@ import { CreateChartDto } from './dto/create-chart.dto';
 import { UpdateChartDto } from './dto/update-chart.dto';
 import { CreateDataSourceFromReportDto } from './dto/report-integration.dto';
 import { JwtAuthGuard } from '../auth/guard/jwt-auth.guard';
+import { File as MulterFile } from 'multer';
 
 @Controller('visualizations')
 @UseGuards(JwtAuthGuard)
@@ -65,7 +66,7 @@ export class VisualizationsController {
   @UseInterceptors(AnyFilesInterceptor())
   async importCsvFile(
     @Body() body: any,
-    @UploadedFiles() files: Express.Multer.File[],
+    @UploadedFiles() files: MulterFile[],
     @Request() req,
   ) {
     try {
