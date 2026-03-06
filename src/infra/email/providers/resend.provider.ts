@@ -41,7 +41,7 @@ export class ResendProvider extends EmailProvider {
           template.templateName,
           template.templateData,
         ),
-        replyTo:
+        reply_to:
           template.replyTo || process.env.SUPPORT_EMAIL || 'dev@melon.ng',
         attachments: template.attachments,
       });
