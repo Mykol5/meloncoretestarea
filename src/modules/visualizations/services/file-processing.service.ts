@@ -1,9 +1,10 @@
 import { Injectable, BadRequestException } from '@nestjs/common';
 import { CsvImportDto } from '../dto/csv-import.dto';
+import { File as MulterFile } from 'multer';
 
 @Injectable()
 export class FileProcessingService {
-  async processCsvFile(file: Express.Multer.File, importDto: CsvImportDto) {
+  async processCsvFile(file: MulterFile, importDto: CsvImportDto) {
     try {
       if (!file.buffer) {
         throw new BadRequestException('File buffer is empty');
