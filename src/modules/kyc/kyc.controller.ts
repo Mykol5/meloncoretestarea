@@ -23,6 +23,7 @@ import { CreateKYCUserDto } from './dto/create-kyc-user.dto';
 import { UpdateKYCUserDto } from './dto/update-kyc-user.dto';
 import { VerificationDecisionDto } from './dto/webhook.dto';
 import { JwtAuthGuard } from '../auth/guard/jwt-auth.guard';
+import { File as MulterFile } from 'multer';
 
 @Controller('kyc')
 export class KYCController {
