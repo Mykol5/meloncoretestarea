@@ -22,6 +22,7 @@ import { ReportsService } from '../reports/reports.service';
 import { handleErrorCatch } from 'src/libs/common/helpers/utils';
 import { v4 as uuidv4 } from 'uuid';
 import { Types } from 'mongoose';
+import { File as MulterFile } from 'multer';
 import {
   DataSourceType,
   DataSourceStatus,
