@@ -160,7 +160,7 @@ export class VisualizationsService {
     }
   }
 
-  async importCsvFile(file: Express.Multer.File, importDto: any, user: any) {
+  async importCsvFile(file: MulterFile, importDto: any, user: any) {
     try {
       const { id: userId, entity } = user;
 
