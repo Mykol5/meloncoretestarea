@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { FilterQuery, Model, Types, UpdateQuery } from 'mongoose';
+import { Document, FilterQuery, Model, Query, Types, UpdateQuery } from 'mongoose';
 import { PaginatedData } from '../common/types/types';
-import { Document, Query, Types } from 'mongoose';
 
 export abstract class AbstractRepo<T> {
   constructor(public readonly model: Model<T>) {}
