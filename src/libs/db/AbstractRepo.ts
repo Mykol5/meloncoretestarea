@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { FilterQuery, Model, Types, UpdateQuery } from 'mongoose';
 import { PaginatedData } from '../common/types/types';
+import { Document, Query, Types } from 'mongoose';
 
 export abstract class AbstractRepo<T> {
   constructor(public readonly model: Model<T>) {}
@@ -36,7 +37,7 @@ export abstract class AbstractRepo<T> {
     let query = this.model.findById(id);
 
     if (options?.populate) {
-      query = query.populate(options.populate);
+      (query as Query<Document<T> & T, Document<T> & T>).populate(options.populate as any);
     }
 
     if (options?.select) {
